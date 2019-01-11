@@ -23,5 +23,5 @@ You need to have a C++ compiler (supporting C++11):
 #### Usage
 Use the --database option to load the proper trained model.
 ```
-> ./release/face_alignment_ert_simple_test --database 300w_public
+> ./release/face_alignment_ert_simple_test --database 300w_public --measure pupils
 ```

@@ -51,5 +51,5 @@ foreach(test ${face_alignment_ert_simple_test})
     ${test}
   )
   target_link_libraries(${test_name} ${face_alignment_ert_simple_libs})
-  add_test(NAME ${test_name} WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR} COMMAND ${test_name} --database 300w_public)
+  add_test(NAME ${test_name} WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR} COMMAND ${test_name} --database 300w_public --measure pupils)
 endforeach()
