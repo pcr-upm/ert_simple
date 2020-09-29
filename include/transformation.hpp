@@ -93,7 +93,7 @@ facePartsToShape
             cv::transform(point, point_proj, tform);
             shape.at<float>(shape_idx,0) = point_proj[0].x;
             shape.at<float>(shape_idx,1) = point_proj[0].y;
-            shape.at<float>(shape_idx,2) = static_cast<float>(landmark.visible);
+            shape.at<float>(shape_idx,2) = 1.0f - landmark.occluded;
             label.at<float>(shape_idx,0) = 1.0f;
           }
       shape_idx++;
@@ -127,7 +127,7 @@ shapeToFaceParts
         landmark.feature_idx = feature_idx;
         landmark.pos.x = points_proj.at<float>(shape_idx,0) / scale;
         landmark.pos.y = points_proj.at<float>(shape_idx,1) / scale;
-        landmark.visible = visible.at<float>(shape_idx,0) > 0.5f;
+        landmark.occluded = 1.0f - visible.at<float>(shape_idx,0);
         parts[db_part.first].landmarks.push_back(landmark);
       }
       shape_idx++;
