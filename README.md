@@ -21,7 +21,9 @@ You need to have a C++ compiler (supporting C++11):
 > cd ..
 ```
 #### Usage
+Use the --measure option to set the face alignment normalization.
+
 Use the --database option to load the proper trained model.
 ```
-> ./release/face_alignment_ert_simple_test --database 300w_public --measure pupils
+> ./release/face_alignment_ert_simple_test --measure pupils --database 300w_public
 ```
